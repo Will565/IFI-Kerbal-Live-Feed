@@ -19,6 +19,9 @@ namespace KLF
 
 		public float chatDisplayWindowX;
 		public float chatDisplayWindowY;
+        public int   chatDisplayWindowWidth;
+        public int   chatDisplayWindowHeight;
+
 
 		public bool infoDisplayBig = false;
 

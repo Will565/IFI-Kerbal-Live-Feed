@@ -1461,7 +1461,24 @@ namespace KLF
                     mappingScreenshotKey = false;
                 }
             }
-
+            if (mappingChatKey)
+            {
+                KeyCode key = KeyCode.F9;
+                if (getAnyKeyDown(ref key))
+                {
+                    KLFGlobalSettings.instance.chatKey = key;
+                    mappingChatKey = false;
+                }
+            }
+            if (mappingViewKey)
+            {
+                KeyCode key = KeyCode.F10;
+                if (getAnyKeyDown(ref key))
+                {
+                    KLFGlobalSettings.instance.viewKey = key;
+                    mappingViewKey = false;
+                }
+            }
         }
 
         public void OnGUI()
