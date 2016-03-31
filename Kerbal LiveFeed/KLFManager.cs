@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using KSP.UI.Screens;
 
 namespace KLF
 {
@@ -352,7 +353,7 @@ namespace KLF
                     && EditorLogic.fetch != null
                     && EditorLogic.fetch.ship != null && EditorLogic.fetch.ship.Count > 0
                     && EditorLogic.fetch.shipNameField != null
-                    && EditorLogic.fetch.shipNameField.Text != null && EditorLogic.fetch.shipNameField.Text.Length > 0;
+                    && EditorLogic.fetch.shipNameField.text != null && EditorLogic.fetch.shipNameField.text.Length > 0;
 
                 String[] status_array = null;
 
@@ -361,7 +362,7 @@ namespace KLF
                     status_array = new String[3];
 
                     //Vessel name
-                    String shipname = EditorLogic.fetch.shipNameField.Text;
+                    String shipname = EditorLogic.fetch.shipNameField.text;
 
                     if (shipname.Length > MAX_VESSEL_NAME_LENGTH)
                         shipname = shipname.Substring(0, MAX_VESSEL_NAME_LENGTH); //Limit vessel name length
