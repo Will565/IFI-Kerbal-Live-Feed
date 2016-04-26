@@ -456,7 +456,7 @@ namespace KLF
 
         private KLFVesselUpdate getVesselUpdate(Vessel vessel)
         {
-
+            // BAD CODE
             if (vessel == null || vessel.mainBody == null)
                 return null;
 
@@ -547,10 +547,11 @@ namespace KLF
             else
                 update.state = State.DEAD;
 
-            update.timeScale = (float)Planetarium.TimeScale;
+            update.timeScale = 1; //(float)Planetarium.TimeScale;
             update.bodyName = vessel.mainBody.bodyName;
 
             return update;
+           
 
         }
 

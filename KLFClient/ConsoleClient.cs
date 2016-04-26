@@ -129,7 +129,7 @@ class ConsoleClient : Client
 
 		Console.WriteLine("Unable to connect to server");
 
-		connectionEnded();
+		//connectionEnded(); removed to see if Null Exception goes away
 
 		return false;
 
