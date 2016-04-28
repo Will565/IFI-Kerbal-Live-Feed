@@ -324,7 +324,7 @@ abstract class Client
 
 			case KLFCommon.ServerMessageID.PLUGIN_UPDATE:
 
-				if (data != null)
+			if (data != null)
 					sendClientInteropMessage(KLFCommon.ClientInteropMessageID.PLUGIN_UPDATE, data);
 
 				break;
@@ -749,7 +749,7 @@ abstract class Client
 	{
 
 		sendClientInteropMessage(
-			KLFCommon.ClientInteropMessageID.CHAT_RECEIVE,
+		KLFCommon.ClientInteropMessageID.CHAT_RECEIVE,
 			encoder.GetBytes(message)
 			);
 

@@ -57,7 +57,7 @@ namespace KLF
 
         public Dictionary<String, VesselEntry> vessels = new Dictionary<string, VesselEntry>();
         public SortedDictionary<String, VesselStatusInfo> playerStatus = new SortedDictionary<string, VesselStatusInfo>();
-        public RenderingManager renderManager;
+       // public RenderingManager renderManager;
         public PlanetariumCamera planetariumCam;
 
         public Queue<byte[]> interopOutQueue = new Queue<byte[]>();
@@ -125,7 +125,7 @@ namespace KLF
         {
             get
             {
-                return renderManager == null || renderManager.uiElementsToDisable.Length < 1 || renderManager.uiElementsToDisable[0].activeSelf;
+                return true; ; //renderManager == null || renderManager.uiElementsToDisable.Length < 1 || renderManager.uiElementsToDisable[0].activeSelf;
             }
         }
 
@@ -192,14 +192,14 @@ namespace KLF
 
         public void updateStep()
         {
-            if (HighLogic.LoadedScene == GameScenes.LOADING)
+           if (HighLogic.LoadedScene == GameScenes.LOADING)
                 return; //Don't do anything while the game is loading
 
             if (planetariumCam != null && planetariumCam.gameObject.GetComponent<KLFCameraScript>() == null)
             {
                 Debug.Log("Added KLF Camera Script");
                 KLFCameraScript script = planetariumCam.gameObject.AddComponent<KLFCameraScript>();
-                script.manager = this;
+               script.manager = this;
             }
             // Animate ALert Icon
             if (KLF_button_alert_anim != 0)
@@ -1402,12 +1402,12 @@ namespace KLF
         public void Update()
         {
 
-            if (HighLogic.LoadedScene == GameScenes.LOADING)
+            if (HighLogic.LoadedScene == GameScenes.LOADING || HighLogic.LoadedScene == GameScenes.MAINMENU)
                 return; //Don't do anything while the game is loading
 
             //Find an instance of the game's RenderingManager
-            if (renderManager == null)
-                renderManager = (RenderingManager)FindObjectOfType(typeof(RenderingManager));
+           // if (renderManager == null)
+             //   renderManager = (RenderingManager)FindObjectOfType(typeof(RenderingManager));
 
             //Find an instance of the game's PlanetariumCamera
             if (planetariumCam == null)
