@@ -7,7 +7,7 @@ public class KLFCommon
 {
     public const bool COMMON_LOG_ENABLED = true;
     // "BUILD VER"
-    public const String PROGRAM_VERSION = "0.9.5";
+    public const String PROGRAM_VERSION = "0.9.6";
 	public const Int32 FILE_FORMAT_VERSION = 8;
 	public const Int32 NET_PROTOCOL_VERSION = 9;
 	public const int MSG_HEADER_LENGTH = 8;
