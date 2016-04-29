@@ -57,7 +57,6 @@ namespace KLF
 
         public Dictionary<String, VesselEntry> vessels = new Dictionary<string, VesselEntry>();
         public SortedDictionary<String, VesselStatusInfo> playerStatus = new SortedDictionary<string, VesselStatusInfo>();
-       // public RenderingManager renderManager;
         public PlanetariumCamera planetariumCam;
 
         public Queue<byte[]> interopOutQueue = new Queue<byte[]>();
@@ -121,13 +120,7 @@ namespace KLF
         }
 
 
-        public bool globalUIToggle
-        {
-            get
-            {
-                return true; ; //renderManager == null || renderManager.uiElementsToDisable.Length < 1 || renderManager.uiElementsToDisable[0].activeSelf;
-            }
-        }
+      
 
         public bool sceneIsValid
         {
@@ -152,7 +145,7 @@ namespace KLF
         {
             get
             {
-                return sceneIsValid && KLFInfoDisplay.infoDisplayActive && globalUIToggle;
+                return sceneIsValid && KLFInfoDisplay.infoDisplayActive;
             }
         }
 
@@ -1405,9 +1398,7 @@ namespace KLF
             if (HighLogic.LoadedScene == GameScenes.LOADING || HighLogic.LoadedScene == GameScenes.MAINMENU)
                 return; //Don't do anything while the game is loading
 
-            //Find an instance of the game's RenderingManager
-           // if (renderManager == null)
-             //   renderManager = (RenderingManager)FindObjectOfType(typeof(RenderingManager));
+           
 
             //Find an instance of the game's PlanetariumCamera
             if (planetariumCam == null)
