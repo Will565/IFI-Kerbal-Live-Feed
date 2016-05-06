@@ -30,7 +30,7 @@ class ClientSettings
 			return mUsername;
 		}
 	}
-	public String hostname = "localhost";
+	public String hostname = "ksp.gaterunner.com";
 	public bool autoReconnect = true;
 	public String[] favorites = new String[8];
 
